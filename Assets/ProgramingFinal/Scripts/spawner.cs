@@ -10,6 +10,7 @@
         [SerializeField] private bool canSpawn = false;
         [SerializeField] private bool spawnBossOrNot = true;
         [SerializeField] private int howManyEnemiesBeforeBoss = 1;
+        [SerializeField] private int maxEnemiesEnemySpawn = 0;
 
         [Header("" + "")]
         [SerializeField] private GameObject[] enemyPrefab;
@@ -46,7 +47,7 @@
             // call UIcontoroller class
             UIController uiControllerInstance = FindObjectOfType<UIController>();
 
-            while (canSpawn)
+            while (canSpawn && enemiesSpawned <= maxEnemiesEnemySpawn)
             {
                 yield return wait;
 

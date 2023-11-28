@@ -189,6 +189,7 @@ MonoBehaviour:
   canSpawn: 0
   spawnBossOrNot: 0
   howManyEnemiesBeforeBoss: 1
+  maxEnemiesEnemySpawn: 0
   enemyPrefab:
   - {fileID: 7249902736861961743, guid: cb91f314507d892448a6a7d479e5c390, type: 3}
   - {fileID: 7633664004614022485, guid: 0d58b50179710f94dbab991f9b68377f, type: 3}
@@ -242,6 +243,7 @@ MonoBehaviour:
   canSpawn: 1
   spawnBossOrNot: 0
   howManyEnemiesBeforeBoss: 1
+  maxEnemiesEnemySpawn: 0
   enemyPrefab:
   - {fileID: 7249902736861961743, guid: cb91f314507d892448a6a7d479e5c390, type: 3}
   - {fileID: 7633664004614022485, guid: 0d58b50179710f94dbab991f9b68377f, type: 3}
@@ -917,10 +919,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86554cc6884cce145ba22e17d1dfca13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 4
+  spawnRate: 3
   canSpawn: 1
   spawnBossOrNot: 1
-  howManyEnemiesBeforeBoss: 3
+  howManyEnemiesBeforeBoss: 4
+  maxEnemiesEnemySpawn: 3
   enemyPrefab:
   - {fileID: 7249902736861961743, guid: cb91f314507d892448a6a7d479e5c390, type: 3}
   - {fileID: 7633664004614022485, guid: 0d58b50179710f94dbab991f9b68377f, type: 3}
@@ -1113,8 +1116,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRate: 1
   canSpawn: 1
-  spawnBossOrNot: 1
+  spawnBossOrNot: 0
   howManyEnemiesBeforeBoss: 4
+  maxEnemiesEnemySpawn: 0
   enemyPrefab:
   - {fileID: 7249902736861961743, guid: cb91f314507d892448a6a7d479e5c390, type: 3}
   - {fileID: 7633664004614022485, guid: 0d58b50179710f94dbab991f9b68377f, type: 3}
