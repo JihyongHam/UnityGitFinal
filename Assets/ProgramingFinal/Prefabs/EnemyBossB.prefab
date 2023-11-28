@@ -209,7 +209,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6981397015985327606}
   m_Layer: 0
-  m_Name: EnemyBoss
+  m_Name: EnemyBossB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -277,7 +277,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1.21, z: 0}
 --- !u!54 &8720026468295189308
 Rigidbody:
   m_ObjectHideFlags: 0

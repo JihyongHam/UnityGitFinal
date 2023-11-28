@@ -8,12 +8,11 @@ public class spawner : MonoBehaviour
     [SerializeField] private float spawnRate = 1f;
     [SerializeField] private bool canSpawn = true;
     [SerializeField] private GameObject[] enemyPrefab;
-    [SerializeField] private bool spawnBossOrNot = true;
     [SerializeField] private GameObject bossPrefab;
-    [SerializeField] private int enemiesSpawnBeforeBoss = 0;
+    [SerializeField] private bool spawnBossOrNot = true;
+    [SerializeField] private int enemiesSpawnBeforeBoss = 1;
 
-    private int enemiesSpawned = 0;
-
+    private int enemiesSpawned = 1;
 
     [Header("Gizmo Settings")]
     [SerializeField] private Color gizmoColor = Color.clear;
@@ -46,6 +45,7 @@ public class spawner : MonoBehaviour
 
                 Instantiate(bossPrefab, transform.position, Quaternion.identity);
 
+                // can be removed after setting up the UI
                 enemiesSpawned = 0;
 
                 foreach (GameObject enemyInstance in GameObject.FindGameObjectsWithTag("Enemy"))
@@ -56,6 +56,7 @@ public class spawner : MonoBehaviour
             }
         }
     }
+
 
     private void OnDrawGizmos()
     {
