@@ -10,7 +10,7 @@ public class spawner : MonoBehaviour
     [SerializeField] private bool canSpawn = false;
     [SerializeField] private bool spawnBossOrNot = true;
     [SerializeField] private int howManyEnemiesBeforeBoss = 1;
-    [SerializeField] private int maxEnemiesEnemySpawn = 0;
+    [SerializeField] private int maxEnemySpawn = 0;
 
     // Enemy sort Settings
     [Header("" + "")]
@@ -72,7 +72,7 @@ public class spawner : MonoBehaviour
         UIController uiControllerInstance = FindObjectOfType<UIController>();
 
         // looping condition canSpawn should be turned on
-        while (canSpawn && enemiesSpawned <= maxEnemiesEnemySpawn)
+        while (canSpawn && enemiesSpawned <= maxEnemySpawn)
         {
             yield return wait;
 
