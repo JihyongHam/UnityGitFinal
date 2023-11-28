@@ -1,19 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+
 
 public class spawner : MonoBehaviour
 {
     [Header("Spawner Settings")]
     [SerializeField] private float spawnRate = 1f;
     [SerializeField] private bool canSpawn = true;
+    [SerializeField] private bool spawnBossOrNot = true;
+    [SerializeField] private int howManyEnemiesBeforeBoss = 1;
+
+    [Header("" + "")]
     [SerializeField] private GameObject[] enemyPrefab;
     [SerializeField] private GameObject bossPrefab;
-    [SerializeField] private bool spawnBossOrNot = true;
-    [SerializeField] private int enemiesSpawnBeforeBoss = 1;
+
 
     private int enemiesSpawned = 1;
 
+    [Header("" + "")]
     [Header("Gizmo Settings")]
     [SerializeField] private Color gizmoColor = Color.clear;
     private float gizmoRadius = 1.0f;
@@ -28,6 +34,9 @@ public class spawner : MonoBehaviour
     {
         WaitForSeconds wait = new WaitForSeconds(spawnRate);
 
+        // call UIcontoroller class
+        UIController uiControllerInstance = FindObjectOfType<UIController>();
+
         while (canSpawn)
         {
             yield return wait;
@@ -39,24 +48,28 @@ public class spawner : MonoBehaviour
 
             enemiesSpawned++;
 
-            if (enemiesSpawned >= enemiesSpawnBeforeBoss && spawnBossOrNot)
+            // UIcontoroller
+            if (uiControllerInstance != null)
+            {
+                uiControllerInstance.IncrementEnemyCount();
+            }
+
+
+            if (enemiesSpawned >= howManyEnemiesBeforeBoss && spawnBossOrNot)
             {
                 yield return new WaitForSeconds(spawnRate);
 
                 Instantiate(bossPrefab, transform.position, Quaternion.identity);
-
-                // can be removed after setting up the UI
-                enemiesSpawned = 0;
-
+ 
                 foreach (GameObject enemyInstance in GameObject.FindGameObjectsWithTag("Enemy"))
                 {
                     canSpawn = false;
                     Destroy(enemyInstance);
                 }
             }
+
         }
     }
-
 
     private void OnDrawGizmos()
     {
