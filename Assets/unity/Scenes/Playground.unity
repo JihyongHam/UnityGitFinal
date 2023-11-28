@@ -193,7 +193,7 @@ MonoBehaviour:
   enemyPrefab:
   - {fileID: 7249902736861961743, guid: cb91f314507d892448a6a7d479e5c390, type: 3}
   - {fileID: 7633664004614022485, guid: 0d58b50179710f94dbab991f9b68377f, type: 3}
-  bossPrefab: {fileID: 0}
+  bossPrefab: []
   gizmoColor: {r: 0, g: 1, b: 0, a: 1}
   mainMusic: {fileID: 8300000, guid: ab6bdde04a629ac4288a509483a3bba0, type: 3}
   bossMusic: {fileID: 8300000, guid: 1b3dd0d43ab49204380df86f2563f3e1, type: 3}
@@ -249,7 +249,7 @@ MonoBehaviour:
   enemyPrefab:
   - {fileID: 7249902736861961743, guid: cb91f314507d892448a6a7d479e5c390, type: 3}
   - {fileID: 7633664004614022485, guid: 0d58b50179710f94dbab991f9b68377f, type: 3}
-  bossPrefab: {fileID: 0}
+  bossPrefab: []
   gizmoColor: {r: 1, g: 0, b: 0, a: 1}
   mainMusic: {fileID: 0}
   bossMusic: {fileID: 0}
@@ -932,8 +932,9 @@ MonoBehaviour:
   enemyPrefab:
   - {fileID: 7249902736861961743, guid: cb91f314507d892448a6a7d479e5c390, type: 3}
   - {fileID: 7633664004614022485, guid: 0d58b50179710f94dbab991f9b68377f, type: 3}
-  bossPrefab: {fileID: 6981397015985327607, guid: cb81610b42998c74882548e6481eed83,
-    type: 3}
+  bossPrefab:
+  - {fileID: 6981397015985327607, guid: cb81610b42998c74882548e6481eed83, type: 3}
+  - {fileID: 6981397015985327607, guid: 03e5737718b0a7541a0a25a02b11eee7, type: 3}
   gizmoColor: {r: 1, g: 0, b: 0, a: 1}
   mainMusic: {fileID: 8300000, guid: ab6bdde04a629ac4288a509483a3bba0, type: 3}
   bossMusic: {fileID: 8300000, guid: 1b3dd0d43ab49204380df86f2563f3e1, type: 3}
@@ -1225,8 +1226,7 @@ MonoBehaviour:
   enemyPrefab:
   - {fileID: 7249902736861961743, guid: cb91f314507d892448a6a7d479e5c390, type: 3}
   - {fileID: 7633664004614022485, guid: 0d58b50179710f94dbab991f9b68377f, type: 3}
-  bossPrefab: {fileID: 6981397015985327607, guid: cb81610b42998c74882548e6481eed83,
-    type: 3}
+  bossPrefab: []
   gizmoColor: {r: 1, g: 0, b: 0, a: 1}
   mainMusic: {fileID: 8300000, guid: ab6bdde04a629ac4288a509483a3bba0, type: 3}
   bossMusic: {fileID: 8300000, guid: 1b3dd0d43ab49204380df86f2563f3e1, type: 3}
