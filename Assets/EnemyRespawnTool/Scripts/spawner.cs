@@ -22,6 +22,11 @@ public class spawner : MonoBehaviour
     // Enemy counts for spawner script
     private int enemiesSpawned = 1;
 
+    // Boss Fight Event System
+    [Header("" + "")]
+    [Header("Boss Event Settings")]
+    public UnityEvent bossFightEvent;
+
 
     // Gizmo settings
     [Header("" + "")]
@@ -38,9 +43,6 @@ public class spawner : MonoBehaviour
         
     private AudioSource audioSource;
 
-    public UnityEvent bossSpawnEvent;
-
-
     private void Start()
     {
         // spawning starts
@@ -48,7 +50,7 @@ public class spawner : MonoBehaviour
 
         // music starts
         audioSource = GetComponent<AudioSource>();
-        PlayMusic();
+        PlayMainMusic();
     
     }
 
@@ -62,6 +64,7 @@ public class spawner : MonoBehaviour
             canSpawn = true;
             // spawning starts for trigger volume
             StartCoroutine(Spawner());
+            bossFightEvent.Invoke();
         }
     }
 
@@ -105,20 +108,13 @@ public class spawner : MonoBehaviour
                 int randomTwo = Random.Range(0, bossPrefab.Length);
                GameObject bossToSpawn = bossPrefab[randomTwo];
 
-                // audio should stop to get new audio for boss
-                audioSource.Stop();
-
                 // boss spawns
                 Instantiate(bossToSpawn, transform.position, Quaternion.identity);
-                bossSpawnEvent.Invoke();
+                bossFightEvent.Invoke();
 
                 // play boss music
-                if (audioSource != null && bossMusic != null)
-                {
-                        audioSource.clip = bossMusic;
-                        audioSource.Play();
-                }
-                
+                PlayBossMusic();
+
                 // when boss appears, all the enemies are removed
                 foreach (GameObject enemyInstance in GameObject.FindGameObjectsWithTag("Enemy"))
                 {
@@ -128,22 +124,39 @@ public class spawner : MonoBehaviour
                     // destory enmies taged with Enemy
                     Destroy(enemyInstance);
                 }
+
             }
 
         }
     }
 
-    // play music function
-    private void PlayMusic()
+    // play main music function
+    private void PlayMainMusic()
     {
         // main music play
-        if (audioSource != null && mainMusic != null)
+        if (audioSource != null)
         {
             audioSource.clip = mainMusic;
             audioSource.Play(); 
         }
     }
 
+    // play boss music function
+    private void PlayBossMusic()
+    {
+        // boss music play
+        if (audioSource != null)
+        {
+            audioSource.clip = bossMusic;
+            audioSource.Play();
+        }
+    }
+
+    // If you want to stop playing music after you kill boss. You can call this function. You can just type "StopMusic();" after you set up the condition.
+    private void StopPlayingMusic()
+    {
+        audioSource.Stop();
+    }
 
     // gizmo function
     private void OnDrawGizmos()
