@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class spawner : MonoBehaviour
 {
@@ -36,6 +37,8 @@ public class spawner : MonoBehaviour
     [SerializeField] private AudioClip bossMusic;
         
     private AudioSource audioSource;
+
+    public UnityEvent bossSpawnEvent;
 
 
     private void Start()
@@ -100,13 +103,14 @@ public class spawner : MonoBehaviour
 
                 // randomizing enemies spawning
                 int randomTwo = Random.Range(0, bossPrefab.Length);
-                GameObject bossToSpawn = bossPrefab[randomTwo];
+               GameObject bossToSpawn = bossPrefab[randomTwo];
 
                 // audio should stop to get new audio for boss
                 audioSource.Stop();
 
                 // boss spawns
                 Instantiate(bossToSpawn, transform.position, Quaternion.identity);
+                bossSpawnEvent.Invoke();
 
                 // play boss music
                 if (audioSource != null && bossMusic != null)
