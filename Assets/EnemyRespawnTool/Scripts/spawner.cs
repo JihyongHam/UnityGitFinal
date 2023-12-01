@@ -7,22 +7,24 @@ public class spawner : MonoBehaviour
 {
     // Spawner settings
     [Header("Spawner Settings")]
-    [SerializeField] private float spawnRate = 1f;
     [SerializeField] private bool canSpawn = false;
-    [SerializeField] private bool spawnBossOrNot = true;
-    [SerializeField] private int howManyEnemiesBeforeBoss = 1;
+    [SerializeField] private float spawnRate = 1f;
     [SerializeField] private int maxEnemySpawn = 0;
 
-    // Enemy sort Settings
+    [Header("" + "")]
+    [SerializeField] private bool spawnBossOrNot = true;
+    [SerializeField] private int howManyEnemiesBeforeBoss = 0;
+
+    // Enemy and Boss type settings
     [Header("" + "")]
     [SerializeField] private GameObject[] enemyPrefab;
     [SerializeField] private GameObject[] bossPrefab;
 
 
     // Enemy counts for spawner script
-    private int enemiesSpawned = 1;
+    private int enemiesSpawned = 0;
 
-    // Boss Fight Event System
+    // Event System
     [Header("" + "")]
     [Header("Event Settings")]
     public UnityEvent eventSettings;
@@ -40,6 +42,7 @@ public class spawner : MonoBehaviour
     [Header("Music Settings")]
     [SerializeField] private AudioClip mainMusic;
     [SerializeField] private AudioClip bossMusic;
+    [SerializeField] private bool keepMainMusic = false;
         
     private AudioSource audioSource;
 
@@ -116,8 +119,13 @@ public class spawner : MonoBehaviour
                 // event for boss
                 eventSettings.Invoke();
 
-                // play boss music
-                PlayBossMusic();
+                // keep main music or not
+                if (keepMainMusic == false)
+                {
+                    // play boss music
+                    PlayBossMusic();
+                }
+                
 
                 // when boss appears, all the enemies are removed
                 foreach (GameObject enemyInstance in GameObject.FindGameObjectsWithTag("Enemy"))
@@ -157,7 +165,7 @@ public class spawner : MonoBehaviour
     }
 
     // If you want to stop playing music after you kill boss. You can call this function. You can just type "StopMusic();" after you set up the condition.
-    private void StopPlayingMusic()
+    public void StopPlayingMusic()
     {
         audioSource.Stop();
     }
