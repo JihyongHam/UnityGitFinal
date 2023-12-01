@@ -24,8 +24,8 @@ public class spawner : MonoBehaviour
 
     // Boss Fight Event System
     [Header("" + "")]
-    [Header("Boss Event Settings")]
-    public UnityEvent bossFightEvent;
+    [Header("Event Settings")]
+    public UnityEvent regularEvent;
 
 
     // Gizmo settings
@@ -64,7 +64,9 @@ public class spawner : MonoBehaviour
             canSpawn = true;
             // spawning starts for trigger volume
             StartCoroutine(Spawner());
-            bossFightEvent.Invoke();
+
+            // event for trigger
+            regularEvent.Invoke();
         }
     }
 
@@ -110,7 +112,9 @@ public class spawner : MonoBehaviour
 
                 // boss spawns
                 Instantiate(bossToSpawn, transform.position, Quaternion.identity);
-                bossFightEvent.Invoke();
+
+                // event for boss
+                regularEvent.Invoke();
 
                 // play boss music
                 PlayBossMusic();
