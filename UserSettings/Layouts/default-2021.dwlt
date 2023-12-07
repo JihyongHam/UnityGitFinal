@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 100
+  controlID: 49
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -94,8 +94,8 @@ MonoBehaviour:
     y: 0
     width: 257
     height: 558
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 101
+  controlID: 55
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 102
+  controlID: 56
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -318,22 +318,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/EnemyRespawnTool/Prefabs
+    - Assets/ToolFolder/EnemyRespawnTool
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/EnemyRespawnTool/Prefabs
+  - Assets/ToolFolder/EnemyRespawnTool
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\hamji\Desktop\utd\scriptingFinal\UnityGitFinal
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 72710000
-    m_LastClickedID: 29042
-    m_ExpandedIDs: 000000006471000068710000
+    m_SelectedIDs: 4e710000
+    m_LastClickedID: 29006
+    m_ExpandedIDs: 000000004071000036720000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -361,7 +361,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000064710000
+    m_ExpandedIDs: 0000000040710000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -491,9 +491,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: b66c0000
-      m_LastClickedID: 27830
-      m_ExpandedIDs: 56faffff9efaffffa2faffffa8faffff18fbfffff46c0000046d00000e6d0000
+      m_SelectedIDs: 046d0000
+      m_LastClickedID: 27908
+      m_ExpandedIDs: 18fbfffff46c0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -743,9 +743,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 4.9680347, y: 1.6715574, z: 15.037437}
+    m_Target: {x: -7.0013123, y: -1.0414963, z: 21.449863}
     speed: 2
-    m_Value: {x: 4.9680347, y: 1.6715574, z: 15.037437}
+    m_Value: {x: -7.0013123, y: -1.0414963, z: 21.449863}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -792,9 +792,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.0028674013, y: -0.95618373, z: 0.29296452, w: 0.009174178}
+    m_Target: {x: 0.11646688, y: -0.8833312, z: 0.3342958, w: 0.30759698}
     speed: 2
-    m_Value: {x: 0.0028808545, y: -0.95564395, z: 0.29436788, w: 0.009168917}
+    m_Value: {x: 0.11595325, y: -0.8836997, z: 0.33443534, w: 0.3062398}
   m_Size:
     m_Target: 13.308534
     speed: 2
