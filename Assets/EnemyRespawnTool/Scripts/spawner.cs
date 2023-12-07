@@ -15,6 +15,9 @@ public class spawner : MonoBehaviour
     [SerializeField] private bool spawnBossOrNot = true;
     [SerializeField] private int howManyEnemiesBeforeBoss = 0;
 
+    [Header("" + "")]
+    [SerializeField] private bool removeEnemiesForBoss = true;
+
     // Enemy and Boss type settings
     [Header("" + "")]
     [SerializeField] private GameObject[] enemyPrefab;
@@ -26,7 +29,7 @@ public class spawner : MonoBehaviour
 
     // Event System
     [Header("" + "")]
-    [Header("Event Settings")]
+    [Header("Boss and Trigger Volume Event Settings")]
     public UnityEvent eventSettings;
 
 
@@ -133,8 +136,13 @@ public class spawner : MonoBehaviour
                     // to avoid additional respawns for enemies
                     canSpawn = false;
                     
-                    // destory enmies taged with Enemy
-                    Destroy(enemyInstance);
+                    // when this bool sets to true
+                    if (removeEnemiesForBoss == true)
+                    {
+                        // destory enmies taged with Enemy
+                        Destroy(enemyInstance);
+                    }
+                    
                 }
 
             }
